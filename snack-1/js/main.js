@@ -4,42 +4,44 @@
 //Infine stampa separatamente i 3 array.
 
 
-const car = []
- 
 
-// CREO ARRAY CON I DATI RICHIESTI 
-
- const powerArray = ["benzina", "diesel", "elettrico", "metano"]
- const brandArray = ["alfa", "fiat", "audi", "jeep"]
- const modelArray = ["giulia", "tipo", "renegade", "a1"]
-
-//CREO UNA FUNZIONE PER RENDERE CASUALE IL RISULTATO
-function power(value){
-        const randomNumber =  Math.round(Math.random()*3)
-        const element = value[randomNumber];
-        return element
-    }
+const benzina =[]
+const diesel = []
+const other = []
 
 
-
-//CICLO LA CHIAVE DI CAR PER STAMPARE TUTTI GLI OGGETTI E INSERISCO IN OGNUNO L'ALIMENTAZIONE RANDOM
-
+const car = [{
+    marca: "jeep" ,
+    modello: "renegade" ,
+    alimentazione: "benzina" ,
+},{
+    marca: "alfa" ,
+    modello: "giulia",
+    alimentazione:"diesel" ,
+},{
+    marca: "fiat",
+    modello: "tipo",
+    alimentazione:"metano" ,
+},{
+    marca: "audi",
+    modello: "a1" ,
+    alimentazione: "elettrica" ,
+},{
+    marca: "volvo",
+    modello: "xc40" ,
+    alimentazione:"gpl" ,
+},]
 for (const key in car) {
-        let randomPower = power(powerArray)
-        const element = car[key];  
-        element.alimentazione = randomPower
-        console.log(element)
-
-//INFINE ASSEGNO AD OGNI ALIMENTAZIONE UNA VARIABILE
-        
-        if(randomPower  === "benzina"){
-            const benzina = element
-            console.log(benzina)
-        }else if(randomPower === "diesel"){
-            const diesel = element
-            console.log(diesel)
-        }else{
-            const other =element
-            console.log(other)
+        const element = car[key];
+        if(element.alimentazione  === "benzina"){
+            benzina.push(element)
+        }else if(element.alimentazione === "diesel"){  
+            diesel.push(element)         
+        } else{
+            other.push(element)
         }
-    }
+}
+console.log(benzina)
+console.log(diesel)
+console.log(other)
+
