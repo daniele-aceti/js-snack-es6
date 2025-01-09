@@ -6,7 +6,7 @@ const stringArray =  ['pippo', 'PLUTO', 'Paperino']
 for (let index = 0; index < stringArray.length; index++) {
     const element = stringArray[index];
     const lowerArray = element.toLowerCase()
-    const capital = lowerArray.substring(0,1).toLocaleUpperCase()
+    const capital = lowerArray.substring(0,1).toUpperCase()
     const result = capital + lowerArray.substring(1, lowerArray.lenght)
     console.log(result)
 }
